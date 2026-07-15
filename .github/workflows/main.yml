@@ -1,0 +1,20 @@
+name: bulid my angular app
+on:
+ public:
+     branches: [ main ]
+     jobs:
+         build-angular-app:
+         run-on: ubuntu-latest
+
+         steps:
+           - uses: actions/checkout@v7.0.0
+           - name: Setup Node JS
+            uses: actions/setup-node@v6.5.0
+            with:
+             node-version: 22.x
+           - name: Install Dependencies
+            run: npm install
+           - name: bulid angular app
+            run: npm run build
+           
+          
